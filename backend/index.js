@@ -36,9 +36,11 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET_KEY,
 });
 
-app.listen(process.env.PORT, "localHost", () => {
-  console.log(`Server Running At http://localhost:${process.env.PORT}`);
+// Use the appropriate host and port
+app.listen(process.env.PORT || 8000, "0.0.0.0", () => {
+  console.log(`Server Running At http://localhost:${process.env.PORT || 8000}`);
 });
+
 
 //Load Route
 app.use("/api/user", userRoutes);
