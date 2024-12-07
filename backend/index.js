@@ -47,10 +47,10 @@ app.use("/api/user", userRoutes);
 app.use("/api/product", productRoute);
 app.use("/api/category", categoryRoute);
 
-// // Access Front End Static Files
-// app.use(express.static(path.join(__dirname, "../frontend/build")));
+// Access Front End Static Files
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// //Access Front End All URL
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-// });
+//Access Front End All URL
+app.get("/*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
